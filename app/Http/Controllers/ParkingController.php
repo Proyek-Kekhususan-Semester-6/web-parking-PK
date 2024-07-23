@@ -18,13 +18,36 @@ class ParkingController extends Controller
         return view('pages.users.index', $data);
     }
 
-    public function retrieve()
+    public function retrieve(Request $request)
     {
         $data = [
             "title" => "Parking Lots",
         ];
+        $data['filter_selected'] = "all";
+        $data['slots'] = SlotParkir::where("status", "!=", "perbaikan")->get();
+        if (isset($request['filter']) && $request['filter'] != "all") {
+            $data["slots"] = SlotParkir::where("status", "!=", "perbaikan")->where("status", $request['filter'])->get();
+            $data['filter_selected'] = $request['filter'];
+        }
+        return view('pages.users.parking.index', $data);
+    }
 
-        $data['slots'] = SlotParkir::all(['id_slot_parkir', 'status']);
+    public function search(Request $request)
+    {
+        $req = htmlspecialchars($request['keyword']);
+        // dd($req);
+        $data = [
+            "title" => "Parking Lots",
+        ];
+
+        $data['filter_selected'] = "all";
+
+        if (!empty($req)) {
+            $data['slots'] = SlotParkir::where("status", "!=", "perbaikan")->where('kode_slot_parkir', $req)->orWhere('letak_parkir', $req)->orWhere('status', $req)->get();
+            # code...
+        } else {
+            $data['slots'] = SlotParkir::where("status", "!=", "perbaikan")->get();
+        }
         return view('pages.users.parking.index', $data);
     }
 

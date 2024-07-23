@@ -1,60 +1,20 @@
 {{-- Navigation Bar for Desktop --}}
-<nav class="navbar bg-base-100 hidden md:flex md:fixed md:top-0 md:z-10">
+<nav class="navbar bg-gradient-to-r from-blue-500 to-green-500 hidden md:flex md:fixed md:top-0 md:z-10 text-white w-[80%] rounded-full left-[50%] -translate-x-[50%] mt-5 px-10">
   <div class="navbar-start">
-    <div class="dropdown">
-      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor">
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h8m-8 6h16" />
-        </svg>
-      </div>
-      <ul
-        tabindex="0"
-        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-        <li><a>Item 1</a></li>
-        <li>
-          <a>Parent</a>
-          <ul class="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </li>
-        <li><a>Item 3</a></li>
-      </ul>
-    </div>
-    <a class="btn btn-ghost text-xl">daisyUI</a>
-  </div>
-  <div class="navbar-center hidden lg:flex">
-    <ul class="menu menu-horizontal px-1">
-      <li><a>Item 1</a></li>
-      <li>
-        <details>
-          <summary>Parent</summary>
-          <ul class="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </details>
-      </li>
-      <li><a>Item 3</a></li>
-    </ul>
+    <a class="btn btn-ghost text-xl font-bold">Kelompok 1</a>
   </div>
   <div class="navbar-end">
-    <a class="btn">Button</a>
+    <ul class="menu menu-horizontal px-1 text-lg">
+      <li><a href="/home">Home</a></li>
+      <li><a href="/parking-lots">Parking Lots</a></li>
+      <li><a href="/sentiment">Sentiments</a></li>
+    </ul>
   </div>
 </nav>
 
 {{-- Botton Navigation for Mobile Phone --}}
 
-<div class="btm-nav h-[80px] px-3 fixed bottom-0 bg-red-500 text-white shadow-lg">
+<div class="btm-nav h-[80px] px-3 fixed bottom-0 bg-gradient-to-r from-blue-500 to-green-500 text-white shadow-lg md:hidden z-20">
   <a href="/home" class="">
     <div class="{{ $title == "Home" ? "px-5 py-1 bg-white" : "" }} rounded-md  flex justify-center items-center">
       <svg
@@ -92,12 +52,12 @@
     </div>
     <span class="text-sm  {{ $title == "Sentimen" ? "" : "hidden" }}">Sentiment</span>
   </a>
-  <a href="/profile" class="">
+  {{-- <a href="/profile" class="">
     <div class="{{ $title == "Profile" ? "px-5 py-1 bg-white" : "" }} rounded-md  flex justify-center items-center">
       <svg class="h-7 w-7 {{ $title == "Profile" ? "text-black" : "text-white" }}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
         <path stroke="currentColor" stroke-width="2" d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
       </svg>
     </div>
     <span class="text-sm  {{ $title == "Profile" ? "" : "hidden" }}">Profile</span>
-  </a>
+  </a> --}}
 </div>

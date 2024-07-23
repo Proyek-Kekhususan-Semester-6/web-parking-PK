@@ -9,5 +9,6 @@ class SlotParkir extends Model
 {
     use HasFactory;
     protected $table = 'slot_parkir';
+    protected $primaryKey = 'id_slot_parkir';
     protected $guarded = ['id_slot_parkir'];
 }

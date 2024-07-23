@@ -24,22 +24,45 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        DB::table('slot_parkir')->insert([
-            [
-                'status' => 'kosong',
-                'created_at' => now(),
-                'updated_at' => now()
-            ],
-            [
-                'status' => 'kosong',
-                'created_at' => now(),
-                'updated_at' => now()
-            ],
-            [
-                'status' => 'kosong',
-                'created_at' => now(),
-                'updated_at' => now()
-            ],
-        ]);
+        // DB::table('slot_parkir')->insert([
+        //     [
+        //         'status' => 'kosong',
+        //         'created_at' => now(),
+        //         'updated_at' => now()
+        //     ],
+        //     [
+        //         'status' => 'kosong',
+        //         'created_at' => now(),
+        //         'updated_at' => now()
+        //     ],
+        //     [
+        //         'status' => 'kosong',
+        //         'created_at' => now(),
+        //         'updated_at' => now()
+        //     ],
+        // ]);
+
+        // DB::table('sentiments')->insert([
+        //     [
+        //         'ulasan' => 'Aplikasinya keren',
+        //         'sentimen' => 'positif',
+        //         'created_at' => now(),
+        //         'updated_at' => now()
+        //     ],
+        //     [
+        //         'ulasan' => 'Aplikasinya kurang bagus',
+        //         'sentimen' => 'negatif',
+        //         'created_at' => now(),
+        //         'updated_at' => now()
+        //     ],
+        //     [
+        //         'ulasan' => 'Aplikasinya dapat digunakan',
+        //         'sentimen' => 'netral',
+        //         'created_at' => now(),
+        //         'updated_at' => now()
+        //     ],
+        // ]);
+
+
     }
 }
